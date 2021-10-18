@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Talk</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap core CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Material Design Bootstrap -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
+      rel="stylesheet"
+    />
+    <!-- JQuery -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <!-- Bootstrap tooltips -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"
+    ></script>
+    <!-- Bootstrap core JavaScript -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"
+    ></script>
+    <!-- MDB core JavaScript -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"
+    ></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/rowreorder/1.2.7/css/rowReorder.dataTables.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css"
+    />
+
+    <link href='https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css' rel='stylesheet'>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+      integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/datatables-colvis/1.1.2/css/dataTables.colVis.css"
+      integrity="sha512-00mHHI6wXKL1kdCKYDiDN+Ka4Z4EnDT5HgkIhFoOlRvuEaU4BZS9gPrC0Y7K0N8TUk833tbwvEYhZlH0qj63uQ=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="static/tagify.css"
+    />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/datatables-colvis/1.1.2/js/dataTables.colVis.min.js"
+      integrity="sha512-Kannd4txvh3n3aCbZAoMCXQpXK4fdY3z2Up12xBMZa9BCgH6tdmCjqH3E2MlUjZUUcaKHq3XPngXwvmu2mEqMg=="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src='https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js'></script>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@1&display=swap");
+
+    @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+    body{
+      background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+      background: linear-gradient(to right, #25c481, #25b7c4);
+      font-family: 'Roboto', sans-serif;
+    }
+
+    h2,
+    h3 {
+      font-family: "Source Code Pro", monospace;
+      color: white;
+    }
+     .title{
+        font-family: 'Concert One', cursive;
+    }
+
+    @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,200&display=swap");
+    p {
+      font-family: "Source Code Pro", monospace;
+    }
+    html {
+      font-size: 90%;
+    }
+
+
+    table,td,tr,th{
+        border:none;
+    }
+
+    td.details-control {
+    background-image:url('add.png');background-repeat:no-repeat;background-size:15px 15px;   width: 15px; height: 15px;background-position: center;
+    }
+    tr.shown td.details-control {
+    background-image:url('minus.png');background-repeat:no-repeat;background-size:15px 15px;   width: 15px; height: 15px;background-position: center;
+
+    }
+
+    .collapse_card1{
+    -webkit-transition-property: width background-color font-size left top color padding height;
+    -webkit-transition-duration: 0.2s;
+    -webkit-transition-timing-function: linear;
+    transition-property: width background-color font-size left top color padding height;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+    }
+        .none{
+            display:none;
+        }
+
+  </style>
+  <body>
+    <div class="container" >
+
+    <h2 class='mx-2 mt-2 title'>Search with Voice</h2>
+
+    <div class='row'>
+
+          <div class='col-12 col-md-4 col-lg-4 collapse_card none'  id='collapse_card1'>
+              <div class=' bg-white py-4 shadow-sm rounded'>
+                    <div class='ml-4 d-flex'>
+                        <button class="btn btn-info btn-sm" id="demo" onclick="demo()">
+                            Demo
+                        </button>
+                        <div>
+                            <a href="" class='btn btn-sm btn-info' onclick="clear_data()">Clear data</a>
+                        </div>
+                          <div>
+                            <button class='btn btn-sm btn-info' onclick='close_voice()'>Close</button>
+                        </div>
+                    </div>
+                    <center>
+                      <div style="display: flex;justify-content:center;;">
+
+                            <input type='text' class='form-control responsive' placeholder='Enter your search query' id='transcript' style='width:50%'>
+
+                            <div>
+                            <button id='mn_submit' type='button' class=' m-0 mx-2  btn bg-info text-white px-3 py-2 '>Submit</button>
+                            </div>
+                            <div>
+                           <button class="m-0 mx-2 rounded-circle btn bg-info text-white px-3 py-2"
+                                id="btn"
+                            >
+                            <i class="fas fa-microphone-alt"></i>
+                          </button>
+                        </div>
+
+                        <div> <p
+                            style="width: 50px; display: none"
+                            class="border rounded text-info py-2 text-center"
+                            id="countdown"
+                          ></p></div>
+
+                             <div>
+                          <button
+                            class="m-0 mx-2 rounded-circle btn bg-danger text-white px-3 py-2"
+                            id="stop"
+                            style="display: none"
+                          >
+                            <i class="fas fa-microphone-alt"></i>
+                          </button>
+                           </div> <div>
+
+                        </div>
+
+                        </div>
+
+                </center>
+
+              <div style="">
+                <form style="display: flex; flex-direction: column;">
+                  <div id="tr" style="margin: auto"></div>
+                  <ul id="inputs" style="margin: auto"></ul>
+                </form>
+                </div>
+                <nav>
+                <div class="" id="popup_msg"></div>
+                      <div class="nav nav-tabs mx-4 mt-2" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-basic-tab" data-toggle="tab" href="#nav-basic" role="tab" aria-controls="nav-basic" aria-selected="true">Basic</a>
+                        <a class="nav-item nav-link" id="nav-additional-tab" data-toggle="tab" href="#nav-additional" role="tab" aria-controls="nav-additional" aria-selected="false">Additional</a>
+                      </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                      <div class="tab-pane fade show active" id="nav-basic" role="tabpanel" aria-labelledby="nav-basic-tab">
+                           <div id="output" class="col" style=""></div>
+                      </div>
+                      <div class="tab-pane fade" id="nav-additional" role="tabpanel" aria-labelledby="nav-additional-tab">
+                        <div id="additional_output" class="col" style=""></div>
+                      </div>
+
+                </div>
+
+
+                <div style="display: none">
+                    <form
+                        action="/update_nearest"
+                        id="corpus_form"
+                        onsubmit="update_nearest()"
+                        method="post"
+                        >
+                        <input id="corpus_word" type="text" name="corpus_word" />
+                        <input id="corpus_actual" type="text" name="corpus_actual" />
+                        <input type="submit" id="corpus_submit" />
+                    </form>
+                </div>
+              <div style="display: none">
+                <form action="/wedlock" id="sql_form" method="post">
+                  <input id="qry" type="text" name="sql" />
+                  <input type="submit" id="qry_submit" />
+                </form>
+              </div>
+              <div class="text-center mt-5">
+                <button class="btn btn-sm btn-primary" onclick="next()">
+                  Display Records
+                </button>
+              </div>
+            <div
+                class="alert alert-warning text-center"
+                style="width: 50%; margin: auto; display: none"
+                role="alert"
+                >
+                All fields are required !
+            </div>
+
+             <p id="result"></p>
+            </div>
+         </div>
+         <button class='btn btn-sm btn-primary' id='show_collapse_card_btn' onclick='show_collapse_card()'>Voice Search</button>
+          <div class='col-12 col-md-12 col-lg-12 collapse_card' id='collapse_card2'>
+            <div class='border border-teal p-4 bg-white rounded' style='width:100%;border 2px solid teal;'>
+                <div id="sql_div" style="width:100%;">
+                    <h4 id="record_counts"></h4>
+                    <div class='border p-2'>
+                        <div class='d-flex flex-wrap'>
+                            <div>
+                                <button id='seach_table' class='btn btn-sm btn-primary'><i class="fas fa-microphone-alt"></i></button>
+                            </div>
+                            <div>
+                                <button id='reload_table' onclick='reload_table()' class='btn btn-sm btn-primary'><i class="fas fa-redo-alt"></i></button>
+                            </div>
+                            <div id='tags_input'>
+
+                            </div>
+
+                            <button class='btn btn-sm btn-primary' onclick='search_tag()'>Search1</button>
+                         </div>
+                        <center>
+                        <table style='width:100%'
+                          id="sql_table"
+                          class="table table-hover table-bordered mx-auto"
+                        ></table>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    </div>
+    <!-- ================================================================================== card ================================================================================= -->
+    <div id="g_card"></div>
+
+      <script src="taggify.min.js"></script>
+     <script>
+
+
+    function show_collapse_card(){
+        $("#show_collapse_card_btn").hide()
+        $("#collapse_card2").removeClass("col-md-12 col-lg-12  ")
+        $("#collapse_card2").addClass("col-md-8 col-lg-8")
+        $("#collapse_card1").slideDown()
+    }
+    function close_voice(){
+         $("#show_collapse_card_btn").fadeIn()
+         $("#collapse_card1").hide()
+         $("#collapse_card2").addClass("col-md-12 col-lg-12")
+         $("#collapse_card2").removeClass("col-md-8 col-lg-8")
+    }
+
+     </script>
+
+     <script src="CorpusData.js"></script>
+    <script src="KeywordsRecognition.js"></script>
+    <script src="Speech.js"></script>
+    <script src="Main.js"></script>
+    <script src="ReadoutLoud.js"></script>
+    <script src="AddToCorpus.js"></script>
+
+
+  </body>
+</html>
